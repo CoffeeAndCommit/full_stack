@@ -38,9 +38,18 @@ def testing(request):
 
 
 def first_name(request):
-  mymembers = Member.objects.filter(firstname='deepak').values()
+  mymembers = Member.objects.filter(firstname__startswith='L').values() 
   template = loader.get_template('template.html')
   context = {
    'mymembers':mymembers,
+  }
+  return HttpResponse(template.render(context, request))
+
+
+def order_by(request):
+  mymembers = Member.objects.order_by('firstname').values()
+  template= loader.get_template('order_by.html')
+  context = {
+    'mymembers':mymembers,
   }
   return HttpResponse(template.render(context, request))
