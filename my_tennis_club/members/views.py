@@ -32,3 +32,15 @@ def testing(request):
    'mymembers':mymembers,
   }
   return HttpResponse(template.render(context, request))
+
+
+# filter query set from member data base
+
+
+def first_name(request):
+  mymembers = Member.objects.filter(firstname='deepak').values()
+  template = loader.get_template('template.html')
+  context = {
+   'mymembers':mymembers,
+  }
+  return HttpResponse(template.render(context, request))
