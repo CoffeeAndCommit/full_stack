@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>testing </h1>
+    {%include 'mymenu.html' with me='Medhavi' sponsor='W3Schools'%}
+  {% if greeting == 1%}
+    <p>hello world</p>
+    {%else%}
+    <p>bye world</p>
+  {% endif %}
+
+  {% include 'footer.html' %}
+</body>
+
+</html>
