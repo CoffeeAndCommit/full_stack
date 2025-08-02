@@ -2,15 +2,20 @@
 <html>
 
 <body>
-    <h1>testing </h1>
-    {%include 'mymenu.html' with me='Medhavi' sponsor='W3Schools'%}
-  {% if greeting == 1%}
-    <p>hello world</p>
-    {%else%}
-    <p>bye world</p>
-  {% endif %}
-
-  {% include 'footer.html' %}
+<table>
+  <tr>
+    <th>ID</th>
+    <th>First Name</th>
+    <th>First Name</th>
+  </tr>
+  {%for x in mymembers %}
+    <tr>
+      <td>{{x.id}}</td>
+      <td>{{x.firstname}}</td>
+      <td>{{x.lastname}}</td>
+    </tr>
+    {% endfor %}
+</table>
 </body>
 
 </html>
